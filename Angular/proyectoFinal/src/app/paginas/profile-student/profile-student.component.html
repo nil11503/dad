@@ -1,0 +1,33 @@
+
+    <h2>Perfil</h2>
+    
+
+    <form>
+      <div>
+        <img [src]="student.img" alt="">
+      </div>
+      <div>
+        <label>Nombre:</label>
+        <input type="text" [(ngModel)]="student.name" name="name" disabled>
+      </div>
+      <div>
+        <label>Apellidos:</label>
+        <input type="text" [(ngModel)]="student.surnames" name="surnames" disabled>
+      </div>
+      <div>
+        <label>Correo electrónico:</label>
+        <input type="email" [(ngModel)]="student.email" name="email" disabled>
+      </div>
+      <div *ngIf="cambiar">
+        <input type="file" name="img">
+      </div>
+      <div>
+
+        <button (click)="openChangePasswordDialog()">Cambiar contraseña</button>
+        <button (click)="mostrar()">Cambiar imagen de perfil</button> <button *ngIf="cambiar" (click)="changeImg()">Aceptar</button>
+       
+      </div>
+      <button type="submit" (click)="save()">Guardar</button>
+    </form>
+
+  
